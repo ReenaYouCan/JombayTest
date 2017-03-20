@@ -3,6 +3,8 @@ package com.reena.jombaytest.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -10,21 +12,23 @@ import io.realm.annotations.PrimaryKey;
  * Created by RA on 3/18/2017.
  */
 
-public class PhotoGalleryModel/* extends RealmObject*/ {
-    @SerializedName("albumId")
-    @Expose
+public class PhotoGalleryModel extends RealmObject implements Serializable{
+//    @SerializedName("albumId")
+//    @Expose
+
     private int albumId;
-    @SerializedName("id")
-    @Expose
+    //    @SerializedName("id")
+//    @Expose
+    @PrimaryKey
     private int id;
-    @SerializedName("title")
-    @Expose
+//    @SerializedName("title")
+//    @Expose
     private String title;
-    @SerializedName("url")
-    @Expose
+//    @SerializedName("url")
+//    @Expose
     private String url;
-    @SerializedName("thumbnailUrl")
-    @Expose
+//    @SerializedName("thumbnailUrl")
+//    @Expose
     private String thumbnailUrl;
 
     public int getAlbumId() {

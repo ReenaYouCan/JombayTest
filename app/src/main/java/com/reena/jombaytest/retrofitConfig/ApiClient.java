@@ -1,5 +1,7 @@
 package com.reena.jombaytest.retrofitConfig;
 
+import android.widget.Toast;
+
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
@@ -45,12 +47,29 @@ public class ApiClient {
     {}
 
     public static Retrofit getClient() {
+
+        Gson gson = new GsonBuilder().setExclusionStrategies(new  ExclusionStrategy() {
+            @Override
+            public boolean shouldSkipField(FieldAttributes f) {
+                return f.getDeclaringClass().equals(RealmObject.class);
+            }
+
+            @Override
+            public boolean shouldSkipClass(Class<?> clazz) {
+                return false;
+            }
+        }).create();
+
+
+
         if (retrofit==null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(UtilConstants.BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
+
+
         return retrofit;
     }
 }

@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">JombayTest</string>
-
+    <string name="err_msg">Opps.. Uable to load data please try again</string>
 </resources>

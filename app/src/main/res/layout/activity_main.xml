@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/_10dp"
     tools:context="com.reena.jombaytest.controller_activity.MainActivity">
 
-   <android.support.v7.widget.RecyclerView
-       android:id="@+id/rvPhotoGrid"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       tools:layout_editor_absoluteY="8dp"
-       tools:layout_editor_absoluteX="8dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPhotoGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
+    <TextView
+        android:id="@+id/tvEmptyView"
+        style="@style/MyDefaultTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/err_msg"
+        android:visibility="gone" />
 </RelativeLayout>

@@ -2,6 +2,10 @@ package com.reena.jombaytest.controller_activity;
 
 import android.app.Application;
 
+import com.reena.jombaytest.models.PhotoGalleryModel;
+
+import java.util.ArrayList;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -10,6 +14,21 @@ import io.realm.RealmConfiguration;
  */
 
 public class MainApplication extends Application {
+
+    public static ArrayList<PhotoGalleryModel> mArrPhotos = new ArrayList();
+
+    public static ArrayList<PhotoGalleryModel> getmArrPhotos() {
+        return mArrPhotos;
+    }
+
+    public static void setmArrPhotos(ArrayList<PhotoGalleryModel> arrPhotos) {
+        if(mArrPhotos.size()>0)
+        {
+            mArrPhotos.clear();
+        }
+        mArrPhotos = arrPhotos;
+    }
+
 
     @Override
     public void onCreate() {
